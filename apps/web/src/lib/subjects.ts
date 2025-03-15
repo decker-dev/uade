@@ -336,7 +336,7 @@ export const subjectData = {
       name: "Optativa 2",
       year: 5,
       semester: 1,
-      prerequisites: ["cienciaDatos"],
+      prerequisites: [],
     },
     {
       id: "optativa3",
@@ -357,7 +357,7 @@ export const subjectData = {
       name: "Arquitectura de Aplicaciones",
       year: 5,
       semester: 1,
-      prerequisites: ["ingenieriaSoftware"],
+      prerequisites: ["Sistemas de Información II"],
     },
     {
       id: "calidadSoftware",
