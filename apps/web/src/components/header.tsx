@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
 import { MobileMenu } from "./mobile-menu";
+import { Button } from "./ui/button";
 
 const navigationLinks = [
   { href: "/rules", label: "Rules" },
@@ -36,7 +36,7 @@ export function Header() {
     <div className="flex justify-between items-center mt-2 md:mt-0">
       <div className="md:fixed z-50 flex justify-between items-center top-0 px-6 py-2 w-full bg-background backdrop-filter backdrop-blur-sm bg-opacity-30">
         <Link href="/" className="font-medium font-mono text-sm">
-          cursor.directory
+          uade.me
         </Link>
 
         <div className="hidden md:flex items-center gap-5">
