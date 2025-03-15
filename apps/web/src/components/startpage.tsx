@@ -2,7 +2,7 @@
 
 import { GlobalSearchInput } from "./global-search-input";
 import { HeroTitle } from "./hero-title";
-import { Cursor } from "./ui/cursor";
+import { Uade } from "./ui/uade";
 
 export function Startpage() {
   return (
@@ -16,7 +16,7 @@ export function Startpage() {
               animation: "fadeIn 0.05s ease forwards",
             }}
           >
-            <Cursor />
+            <Uade />
           </div>
 
           <HeroTitle />
