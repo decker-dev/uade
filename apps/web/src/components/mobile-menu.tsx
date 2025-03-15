@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 
 const navigationLinks = [
@@ -19,14 +18,6 @@ const navigationLinks = [
   { href: "/advertise", label: "Advertise" },
   { href: "/about", label: "About" },
 ] as const;
-
-type User = {
-  id: string;
-  slug: string;
-  name?: string;
-  email?: string;
-  image?: string;
-};
 
 export function MobileMenu() {
   const pathname = usePathname();
