@@ -1,4 +1,75 @@
-export const subjectData = {
+// Define the subject ID as a union type of all possible IDs
+export type SubjectId =
+  | "fundamentosInformatica"
+  | "programacion1"
+  | "teoriaSistemas"
+  | "pensamientoCritico"
+  | "matematicaDiscreta"
+  | "arquitecturaComputadoras"
+  | "sistemasInformacion1"
+  | "sistemasRepresentacion"
+  | "fundamentosQuimica"
+  | "elementosAlgebra"
+  | "programacion2"
+  | "paradigmasObjetos"
+  | "ingenieriaDatos1"
+  | "sistemasOperativos"
+  | "sistemasInformacion2"
+  | "calculo1"
+  | "fundamentosTelecomunicaciones"
+  | "algebra"
+  | "fisica1"
+  | "programacion3"
+  | "teoriaComputacion"
+  | "procesoDesarrolloSoftware"
+  | "aplicacionesInteractivas"
+  | "ingenieriaDatos2"
+  | "seminarioIntegracion"
+  | "probabilidadEstadistica"
+  | "ingenieriaSoftware"
+  | "calculo2"
+  | "teleinformaticaRedes"
+  | "examenIngles"
+  | "fisica2"
+  | "desarrolloAplicaciones1"
+  | "desarrolloAplicaciones2"
+  | "cienciaDatos"
+  | "evaluacionProyectos"
+  | "estadisticaAvanzada"
+  | "inteligenciaArtificial"
+  | "direccionProyectos"
+  | "modeladoSimulacion"
+  | "seguridadInformacion"
+  | "tecnologiaMedioambiente"
+  | "practicaProfesional"
+  | "optativa1"
+  | "tecnologiasTecnologicas"
+  | "negociosTecnologicos"
+  | "tecnologiaInnovacion"
+  | "optativa2"
+  | "optativa3"
+  | "derechoInformatico"
+  | "arquitecturaAplicaciones"
+  | "calidadSoftware"
+  | "proyectoFinal"
+  | "seminarioPFI"
+  | "tallerPFI";
+
+// Define the Subject interface
+interface Subject {
+  id: SubjectId;
+  name: string;
+  year: number;
+  semester: number;
+  prerequisites: SubjectId[];
+}
+
+// Define the SubjectData interface
+interface SubjectData {
+  subjects: Subject[];
+}
+
+export const subjectData: SubjectData = {
   subjects: [
     // First Year
     {
@@ -137,20 +208,20 @@ export const subjectData = {
       prerequisites: ["algebra"],
     },
 
-    // Third Year
     {
       id: "programacion3",
       name: "Programación III",
-      year: 3,
+      year: 2,
       semester: 1,
       prerequisites: ["programacion2"],
     },
+    // Third Year
     {
       id: "teoriaComputacion",
       name: "Teoría de la Computación",
       year: 3,
       semester: 1,
-      prerequisites: ["programacion2"],
+      prerequisites: ["programacion3", "matematicaDiscreta"],
     },
     {
       id: "procesoDesarrolloSoftware",
@@ -178,7 +249,7 @@ export const subjectData = {
       name: "Seminario de Integración Profesional",
       year: 3,
       semester: 1,
-      prerequisites: ["sistemasOperativos", "programacion2"],
+      prerequisites: ["ingenieriaDatos1"],
     },
     {
       id: "probabilidadEstadistica",
@@ -229,7 +300,7 @@ export const subjectData = {
       name: "Desarrollo de Aplicaciones I",
       year: 4,
       semester: 1,
-      prerequisites: ["procesoDesarrolloSoftware", "aplicacionesInteractivas"],
+      prerequisites: ["procesoDesarrolloSoftware"],
     },
     {
       id: "desarrolloAplicaciones2",
@@ -243,18 +314,11 @@ export const subjectData = {
       name: "Ciencia de Datos",
       year: 4,
       semester: 1,
-      prerequisites: ["ingenieriaDatos2"],
+      prerequisites: ["ingenieriaDatos2", "probabilidadEstadistica"],
     },
     {
       id: "evaluacionProyectos",
       name: "Evaluación de Proyectos Informáticos",
-      year: 4,
-      semester: 1,
-      prerequisites: ["seminarioIntegracion"],
-    },
-    {
-      id: "estadisticaAvanzada",
-      name: "Estadística Avanzada",
       year: 4,
       semester: 1,
       prerequisites: ["probabilidadEstadistica"],
@@ -271,7 +335,7 @@ export const subjectData = {
       name: "Dirección de Proyectos Informáticos",
       year: 4,
       semester: 1,
-      prerequisites: [],
+      prerequisites: ["sistemasInformacion2"],
     },
     {
       id: "modeladoSimulacion",
@@ -311,6 +375,20 @@ export const subjectData = {
 
     // Fifth Year
     {
+      id: "optativa2",
+      name: "Optativa 2",
+      year: 5,
+      semester: 1,
+      prerequisites: [],
+    },
+    {
+      id: "arquitecturaAplicaciones",
+      name: "Arquitectura de Aplicaciones",
+      year: 5,
+      semester: 1,
+      prerequisites: ["sistemasInformacion2"],
+    },
+    {
       id: "tecnologiasTecnologicas",
       name: "Tecnologías Tecnológicas",
       year: 5,
@@ -332,13 +410,6 @@ export const subjectData = {
       prerequisites: [],
     },
     {
-      id: "optativa2",
-      name: "Optativa 2",
-      year: 5,
-      semester: 1,
-      prerequisites: [],
-    },
-    {
       id: "optativa3",
       name: "Optativa 3",
       year: 5,
@@ -351,13 +422,6 @@ export const subjectData = {
       year: 5,
       semester: 1,
       prerequisites: [],
-    },
-    {
-      id: "arquitecturaAplicaciones",
-      name: "Arquitectura de Aplicaciones",
-      year: 5,
-      semester: 1,
-      prerequisites: ["Sistemas de Información II"],
     },
     {
       id: "calidadSoftware",
