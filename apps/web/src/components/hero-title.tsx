@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 export function HeroTitle() {
-  const text = "Join the Cursor community ";
+  const text = "Bienvenidos a la comunidad UADE ";
 
   return (
     <div className="text-center mb-8">
@@ -24,25 +24,27 @@ export function HeroTitle() {
           animation: "fadeIn 0.2s ease forwards 0.1s",
         }}
       >
-        The home for Cursor enthusiasts where you can explore and{" "}
-        <Link href="/generate" className="border-b border-border border-dashed">
-          generate rules
+        Un espacio creado por estudiantes para estudiantes donde puedes
+        consultar{" "}
+        <Link href="/horarios" className="border-b border-border border-dashed">
+          horarios
         </Link>
-        , browse{" "}
-        <Link href="/mcp" className="border-b border-border border-dashed">
-          MCPs
+        , explorar{" "}
+        <Link href="/materias" className="border-b border-border border-dashed">
+          materias
         </Link>
-        , post and follow <br /> the latest news on the{" "}
-        <Link href="/board" className="border-b border-border border-dashed">
-          board
+        , acceder a recursos académicos y seguir las <br /> últimas novedades en
+        el{" "}
+        <Link href="/foro" className="border-b border-border border-dashed">
+          foro
         </Link>
-        , learn, connect, and discover jobs all in one place.
+        , conectarte con compañeros y encontrar oportunidades laborales.
         <br />
         <Link
-          href="/login"
+          href="/registro"
           className="border-b border-border border-dashed mt-2 inline-block"
         >
-          Join the community now
+          Únete a la comunidad ahora
         </Link>
       </p>
       <style jsx>{`

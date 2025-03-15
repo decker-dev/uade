@@ -15,8 +15,19 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 });
 export const metadata: Metadata = {
-  title: "DKR",
-  description: "Nextjs Starter Kit with Tailwind CSS, TypeScript, Biome",
+  title: "Comunidad UADE",
+  description:
+    "Plataforma para estudiantes de UADE, creada por alumnos para compartir horarios, materias, recursos académicos y más.",
+  keywords: [
+    "UADE",
+    "universidad",
+    "estudiantes",
+    "horarios",
+    "materias",
+    "foro",
+  ],
+  authors: [{ name: "Estudiantes UADE" }],
+  creator: "Comunidad UADE",
 };
 
 export const viewport: Viewport = {
@@ -36,9 +47,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <Providers>
           <Header />
