@@ -22,11 +22,9 @@ export function Startpage() {
         </div>
 
         <HeroTitle />
-        {/* 
         <div className="max-w-[620px] mx-auto w-full mb-14">
           <GlobalSearchInput />
         </div>
-        */}
         <motion.div
           className="mb-10"
           initial={{ opacity: 0, y: 10 }}
