@@ -9,14 +9,9 @@ import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
 const navigationLinks = [
-  { href: "/rules", label: "Rules" },
-  { href: "/board", label: "Board" },
-  { href: "/jobs", label: "Jobs" },
-  { href: "/mcp", label: "MCP Store" },
-  { href: "/learn", label: "Learn" },
-  { href: "/games", label: "Games" },
-  { href: "/advertise", label: "Advertise" },
-  { href: "/about", label: "About" },
+  { href: "/major", label: "Carreras" },
+  { href: "/subject", label: "Materias" },
+  { href: "/faq", label: "Preguntas Frecuentes" },
 ] as const;
 
 export function MobileMenu() {
