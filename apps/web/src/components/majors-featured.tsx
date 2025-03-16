@@ -19,7 +19,7 @@ export type Major = {
     slug: string;
   };
   place: "Remote" | "On-site" | "Hybrid";
-  link: string;
+  slug: string;
 };
 
 export function MajorsFeatured({
@@ -78,13 +78,13 @@ export function MajorsFeatured({
                   className="w-fit bg-[#1c1c1c] text-[#878787] hover:bg-[#2c2c2c] rounded-full font-mono text-xs"
                   asChild
                 >
-                  <a
-                    href={`${job.link}`}
+                  <Link
+                    href={`/major/${job.slug}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     View
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
