@@ -1,29 +1,14 @@
 "use client";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MobileMenu } from "./mobile-menu";
-import { Button } from "./ui/button";
 
 const navigationLinks = [
-  { href: "/rules", label: "Rules" },
-  { href: "/board", label: "Trending" },
-  { href: "/jobs", label: "Jobs" },
-  { href: "/mcp", label: "MCPs" },
-  { href: "/generate", label: "Generate" },
-  // { href: "/community", label: "Community" },
-  { href: "/games", label: "Games" },
-  { href: "/learn", label: "Learn" },
-  { href: "/advertise", label: "Advertise" },
-  { href: "/about", label: "About" },
+  { href: "/major", label: "Carreras" },
+  { href: "/subject", label: "Materias" },
+  { href: "/faq", label: "Preguntas Frecuentes" },
 ] as const;
 
 export function Header() {
@@ -45,7 +30,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "flex items-center gap-2 text-sm font-medium",
+                "flex items-center gap-2 text-sm font-medium py-2",
                 pathname.includes(link.href)
                   ? "text-primary"
                   : "text-[#878787]",
@@ -54,7 +39,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-
+          {/*
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
@@ -84,6 +69,7 @@ export function Header() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          */}
         </div>
       </div>
       <MobileMenu />

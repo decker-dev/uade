@@ -75,7 +75,7 @@ export function MajorsFeatured({
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="w-fit bg-[#1c1c1c] text-[#878787] hover:bg-[#2c2c2c] rounded-full font-mono text-xs"
+                  className="w-fit dark:bg-[#1c1c1c] dark:text-[#878787] dark:hover:bg-[#2c2c2c] rounded-full font-mono text-xs"
                   asChild
                 >
                   <Link
@@ -83,7 +83,7 @@ export function MajorsFeatured({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View
+                    Ver
                   </Link>
                 </Button>
               </CardContent>
