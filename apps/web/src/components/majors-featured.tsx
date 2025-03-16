@@ -10,26 +10,24 @@ import {
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
-export type Job = {
+export type Major = {
   id: string;
   title: string;
   description: string;
-  company: {
+  faculty: {
     name: string;
     slug: string;
-    image: string;
   };
-  workplace: string;
+  place: "Remote" | "On-site" | "Hybrid";
   link: string;
 };
 
-export function JobsFeatured({
+export function MajorsFeatured({
   data,
   hidePagination,
 }: {
-  data?: Job[] | null;
+  data?: Major[] | null;
   hidePagination?: boolean;
 }) {
   return (
@@ -60,29 +58,15 @@ export function JobsFeatured({
             <Card className="bg-transparent">
               <CardContent className="flex flex-col gap-4 p-4">
                 <div className="flex items-center gap-3">
-                  <Link href={`/c/${job.company.slug}`}>
-                    <Avatar className="size-12 rounded-none">
-                      {job.company.image ? (
-                        <AvatarImage
-                          src={job.company.image}
-                          alt={job.company.name}
-                        />
-                      ) : (
-                        <AvatarFallback className="bg-[#1c1c1c] rounded-none">
-                          {job.company.name.charAt(0)}
-                        </AvatarFallback>
-                      )}
-                    </Avatar>
-                  </Link>
                   <div>
                     <div className="flex items-center gap-2 text-xs text-[#878787] font-mono line-clamp-1">
-                      <Link href={`/c/${job.company.slug}`}>
-                        <span className="line-clamp-1">{job.company.name}</span>
+                      <Link href={`/c/${job.faculty.slug}`}>
+                        <span className="line-clamp-1">{job.faculty.name}</span>
                       </Link>
-                      {job.workplace && (
+                      {job.place && (
                         <>
                           <span>•</span>
-                          <span className="line-clamp-1">{job.workplace}</span>
+                          <span className="line-clamp-1">{job.place}</span>
                         </>
                       )}
                     </div>
