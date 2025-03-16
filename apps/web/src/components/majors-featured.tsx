@@ -14,7 +14,6 @@ import * as React from "react";
 export type Major = {
   id: string;
   title: string;
-  description: string;
   faculty: {
     name: string;
     slug: string;
@@ -73,9 +72,6 @@ export function MajorsFeatured({
                     <h3 className="text-md line-clamp-1">{job.title}</h3>
                   </div>
                 </div>
-                <p className="text-[#878787] text-sm line-clamp-2">
-                  {job.description}
-                </p>
                 <Button
                   variant="secondary"
                   size="sm"

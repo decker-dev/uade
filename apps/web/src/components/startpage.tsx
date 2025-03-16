@@ -41,7 +41,6 @@ export function Startpage() {
                 {
                   id: "1",
                   title: "Ingeniería en Informática",
-                  description: "Software Engineer",
                   faculty: {
                     name: "Ciencias Exactas",
                     slug: "faculty-of-science-and-technology",
