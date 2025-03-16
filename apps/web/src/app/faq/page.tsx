@@ -1,20 +1,21 @@
+import { Button } from "@/components/ui/button";
 import { Faq } from "@/modules/faq/faq";
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-12 md:py-24">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Find answers to the most common questions about our products and
-            services.
-          </p>
+    <div className="flex mx-auto max-w-4xl min-h-screen w-full md:mt-28 mt-14 px-6 lg:px-0">
+      <div className="w-full">
+        <div className="flex justify-between items-center w-full">
+          <div>
+            <h2 className="text-xl">Preguntas Frecuentes</h2>
+            <p className="text-sm text-[#878787] mt-1">
+              Encuentra respuestas y las preguntas más frecuentes de la UADE.
+            </p>
+          </div>
         </div>
-
-        <Faq />
+        <div className="mt-14">
+          <Faq />
+        </div>
       </div>
     </div>
   );

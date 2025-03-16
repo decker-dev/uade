@@ -156,7 +156,7 @@ export function Faq() {
         >
           <motion.button
             onClick={() => toggleQuestion(index)}
-            className="flex justify-between items-center w-full p-6 text-left"
+            className="flex justify-between items-center p-4 tex t-left w-full"
             whileHover={{ backgroundColor: "rgba(var(--primary), 0.05)" }}
             aria-expanded={expandedIndex === index}
             aria-controls={`faq-answer-${index}`}
