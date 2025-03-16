@@ -34,7 +34,8 @@ export function AnimatedTable({
         tbodyElement as React.ReactElement,
         {},
         React.Children.map(
-          (tbodyElement as React.ReactElement).props.children,
+          (tbodyElement as React.ReactElement<{ children: ReactNode }>).props
+            .children,
           (row, index) => {
             if (React.isValidElement(row) && row.type === "tr") {
               return (
@@ -43,9 +44,15 @@ export function AnimatedTable({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   whileHover={{ backgroundColor: "rgba(var(--primary), 0.05)" }}
-                  className={row.props.className}
+                  className={
+                    (row as React.ReactElement<{ className?: string }>).props
+                      .className
+                  }
                 >
-                  {row.props.children}
+                  {
+                    (row as React.ReactElement<{ children: ReactNode }>).props
+                      .children
+                  }
                 </motion.tr>
               );
             }

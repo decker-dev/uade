@@ -45,9 +45,10 @@ export function AnimatedList({
   // Clone children and wrap them with motion.li
   const animatedChildren = React.Children.map(children, (child) => {
     if (React.isValidElement(child) && child.type === "li") {
+      const { className, children: childChildren } = child.props as { className?: string; children?: ReactNode };
       return (
-        <motion.li variants={item} className={child.props.className}>
-          {child.props.children}
+        <motion.li variants={item} className={className}>
+          {childChildren}
         </motion.li>
       );
     }
