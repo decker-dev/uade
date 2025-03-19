@@ -3,7 +3,9 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { MobileMenu } from "./mobile-menu";
+import { UserMenu } from "./user-menu";
 
 const navigationLinks = [
   { href: "/major", label: "Carreras" },
@@ -70,6 +72,9 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
           */}
+          <Suspense fallback={null}>
+            <UserMenu />
+          </Suspense>
         </div>
       </div>
       <MobileMenu />
