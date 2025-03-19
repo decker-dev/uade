@@ -29,7 +29,15 @@ export function UserMenu() {
   const pathname = usePathname();
   const session = authClient.useSession();
   const [isLoading, setIsLoading] = useState(true);
-
+  const canCreateProject = authClient.admin
+    .hasPermission({
+      permission: {
+        project: ["create"],
+      },
+    })
+    .then((res) => {
+      console.log("canCreateProject", res);
+    });
   const [user, setUser] = useState<User | null>(null);
 
   const [_, setQueryStates] = useQueryStates({
@@ -39,6 +47,7 @@ export function UserMenu() {
 
   useEffect(() => {
     if (session.data) {
+      console.log(session);
       setUser({
         id: session.data.user.id,
         slug: session.data.user.id,
